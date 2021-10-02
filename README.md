@@ -1,0 +1,2 @@
+# geant4_docker
+Build a GEANT4 image and push to docker hub with github actions. The base image is `from rootproject/root:6.22.08-centos7`. The action workflow is set up with instructions from https://docs.docker.com/ci-cd/github-actions/.
