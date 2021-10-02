@@ -11,3 +11,8 @@ RUN echo "Install GEANT4" && \
     cmake3 .. -DCMAKE_INSTALL_PREFIX=/opt/geant4 -DGEANT4_INSTALL_DATA=ON && \
     make && make install && \
     cd ../.. && rm -rf geant4-10.3.3 v10.3.3.tar.gz
+
+COPY ./geant4.entrypoint.sh /opt/geant4/
+RUN chmod +x /opt/geant4/geant4.entrypoint.sh
+
+ENTRYPOINT [ "/opt/geant4/geant4.entrypoint.sh" ]
