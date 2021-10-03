@@ -3,6 +3,7 @@ FROM rootproject/root:6.22.08-centos7
 RUN echo "Hello from inside the container" && \
     echo "Base image is from docker://rootproject/root:6.22.08-centos7" && \
     echo "Install common software" && \
+    yum update -q -y && \
     yum -y install wget git make cmake3 gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel 
     
 RUN echo "Install GEANT4" && \
